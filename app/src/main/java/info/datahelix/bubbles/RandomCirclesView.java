@@ -33,12 +33,16 @@ public class RandomCirclesView extends View {
         }
     }
 
-    public void drawCircle(){
+    public void addCircle(){
         int x = random.nextInt(getWidth()) + 1;
         int y = random.nextInt(getHeight()) + 1;
         int r = random.nextInt(100) + 25;
         int color = Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256));
         circles.add(new Circle(x, y, r, color));
+    }
+
+    public void drawCircle(){
+        addCircle();
         invalidate();
     }
 
